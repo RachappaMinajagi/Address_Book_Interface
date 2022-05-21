@@ -14,18 +14,18 @@ export class AddressbookServiceService {
   constructor(private http:HttpClient) { }
 
   insertAddressBook(addressbook:any){
-    return this.http.post("http://localhost:8081/addressBook/create",addressbook);
+    return this.http.post("http://localhost:8085/addressBook/create",addressbook);
   }
   getAddressBook(){
-    return this.http.get("http://localhost:8081/addressBook/retrieve");
+    return this.http.get("http://localhost:8085/addressBook/retrieve");
   }
   getAddressBookById(Id:number){
-    return this.http.get("http://localhost:8081/addressBook/findById/"+Id);
+    return this.http.get("http://localhost:8085/addressBook/findById/"+Id);
   }
   updateAddressBookById(Id:number,addressbook:any){
-    return this.http.put("http://localhost:8081/addressBook/update/"+Id,addressbook);
+    return this.http.put("http://localhost:8085/addressBook/update/"+Id,addressbook);
   }
   deleteAddressBookById(Id:number){
-    return this.http.delete("http://localhost:8081/addressBook/delete/"+Id);
+    return this.http.delete("http://localhost:8085/addressBook/delete/"+Id);
   }
 }

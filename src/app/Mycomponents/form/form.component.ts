@@ -23,12 +23,9 @@ Id: any = this.route.snapshot.paramMap.get('Id')
 
   //whenever the component is initialized ngOnInit method is invoked first
   ngOnInit(): void {
-    console.log("the id is",this.Id);
     this._service.getAddressBookById(this.Id).subscribe((data : any)=>{
       this.addressbook=data.data;
-      console.log("the response dto is",data)
-      console.log("the message is",data.message)
-      console.log("the address book data is",this.addressbook);
+     
     })
 
   }
@@ -43,7 +40,7 @@ Id: any = this.route.snapshot.paramMap.get('Id')
   onAddContact() {
     console.log(this.addressbook);
     this._service.insertAddressBook(this.addressbook).subscribe((data :any)=> {
-      console.log("Data Addes Sucessfully");
+      // console.log("Data Addes Sucessfully");
        this.router.navigate(["dashboard"]);
 
     });
