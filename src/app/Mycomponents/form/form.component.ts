@@ -30,7 +30,7 @@ Id: any = this.route.snapshot.paramMap.get('Id')
 
   }
 
-    // navigate user to DashboardComponent
+  // Cancel button navigate user to DashboardComponent
   onDashboard() {
     this.router.navigate(["dashboard"]);
   }
